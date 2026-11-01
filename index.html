@@ -755,6 +755,31 @@ h1, h2, h3, .frase, .paso__num, .curso__num, .cita, .docente__avatar { font-vari
 }
 .chip .icono { color: var(--c-turquesa-700); }
 
+/* Curso elegido + "Cambiar curso" */
+.formulario__curso { display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; }
+.formulario__cambiar { margin-bottom: 20px; padding: 0; background: none; border: 0; }
+
+/* Selector de curso: ocupa el lugar del formulario mientras no hay curso elegido */
+.selector__titulo {
+  font-family: var(--font-sans); font-weight: var(--fw-semibold);
+  font-size: 1.125rem; line-height: 1.35; color: var(--c-navy);
+}
+.selector__lista { margin: 16px 0 0; display: grid; gap: 10px; }
+@media (min-width: 768px) { .selector__lista { grid-template-columns: 1fr 1fr; } }
+.selector__opcion {
+  width: 100%; min-height: 52px; padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--c-blanco); border: 1.5px solid var(--c-borde); border-radius: var(--radius-sm);
+  font-weight: var(--fw-semibold); font-size: var(--fs-ui); line-height: 1.35;
+  color: var(--c-navy); text-align: left;
+  transition: border-color var(--dur-rapida) var(--ease-out), background-color var(--dur-rapida) var(--ease-out);
+}
+.selector__opcion:hover { border-color: var(--c-turquesa); background: var(--c-celeste); }
+.selector__opcion:active { background: var(--c-celeste-200); }
+.selector__opcion:focus-visible { outline-offset: 2px; }
+.selector__opcion .icono { flex: none; color: var(--c-turquesa-700); transition: transform var(--dur-rapida) var(--ease-out); }
+.selector__opcion:hover .icono { transform: translateX(3px); }
+
 .formulario__marco { position: relative; }
 .formulario__iframe { width: 100%; border: 0; min-height: 560px; display: block; }
 .formulario__cargando {
@@ -981,7 +1006,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
       <span class="logo__vital">VITAL</span>
     </a>
     <nav class="barra__enlaces" aria-label="Accesos rápidos">
-      <a class="barra__enlace" href="#inscripcion">Inscríbete</a>
+      <a class="barra__enlace" href="#cursos">Inscríbete</a>
       <a class="barra__enlace" href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20Kl%C3%A9os%20Vital" data-wa target="_blank" rel="noopener">
         <svg class="icono icono--18" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>WhatsApp
       </a>
@@ -1001,7 +1026,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
         <p class="hero__sub">Educación que transforma tu práctica clínica</p>
         <p class="hero__texto">Cursos de capacitación en medicina estética y regenerativa. Talleres 100% prácticos y presenciales para personal de salud.</p>
         <div class="botones">
-          <a class="btn btn--primario" href="#inscripcion">Inscríbete ahora</a>
+          <a class="btn btn--primario" href="#cursos">Inscríbete ahora</a>
           <a class="btn btn--secundario" href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20Kl%C3%A9os%20Vital" data-wa target="_blank" rel="noopener">
             <svg class="icono icono--20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>Tengo preguntas
           </a>
@@ -1275,12 +1300,21 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
       </div>
 
       <div class="formulario inscripcion__form revelar">
-        <div aria-live="polite">
-          <p class="chip" id="chip-curso" hidden>
-            <svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span id="chip-curso-texto"></span>
-          </p>
+        <div class="formulario__curso">
+          <div aria-live="polite">
+            <p class="chip" id="chip-curso" hidden>
+              <svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span id="chip-curso-texto"></span>
+            </p>
+          </div>
+          <button type="button" class="enlace formulario__cambiar" id="cambiar-curso" hidden>Cambiar curso</button>
         </div>
-        <div class="formulario__marco">
+        <!-- Selector de curso: el formulario solo se muestra con un curso elegido. Las opciones las arma el JS
+             a partir de los botones "Inscribirme" de las tarjetas (data-curso). -->
+        <div class="selector" id="selector-curso" hidden>
+          <p class="selector__titulo" id="selector-titulo">Elige el curso que te interesa</p>
+          <ul class="selector__lista" id="selector-lista" aria-labelledby="selector-titulo"></ul>
+        </div>
+        <div class="formulario__marco" id="tally-marco">
           <!-- [COMPLETAR] La URL del formulario se configura en la constante TALLY_URL del <script> (no aquí).
                El JS asigna el src con alignLeft, hideTitle, transparentBackground, dynamicHeight, curso y src
                (data-url guarda la misma URL como referencia para pruebas). -->
@@ -1294,7 +1328,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
         </div>
         <div class="formulario__pie">
           <p class="formulario__aviso"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-candado"/></svg><span>Tus datos se usan solo para contactarte sobre los cursos de Kléos Vital.</span></p>
-          <p class="formulario__respaldo">¿Problemas para ver el formulario? <a class="enlace-linea" id="tally-respaldo" href="https://tally.so/r/XXXXXX?curso=&amp;src=directo" target="_blank" rel="noopener">Ábrelo aquí<svg class="icono icono--14" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg></a></p>
+          <p class="formulario__respaldo" id="tally-respaldo-texto">¿Problemas para ver el formulario? <a class="enlace-linea" id="tally-respaldo" href="https://tally.so/r/XXXXXX?curso=&amp;src=directo" target="_blank" rel="noopener">Ábrelo aquí<svg class="icono icono--14" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg></a></p>
         </div>
       </div>
 
@@ -1384,7 +1418,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
     <div class="contenedor contenedor--texto revelar">
       <h2 class="titulo-2 cierre__titulo" id="cierre-titulo">Tu vocación también merece formación de alto nivel</h2>
       <div class="botones">
-        <a class="btn btn--primario" href="#inscripcion">Inscríbete</a>
+        <a class="btn btn--primario" href="#cursos">Inscríbete</a>
         <a class="btn btn--secundario" href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20Kl%C3%A9os%20Vital" data-wa target="_blank" rel="noopener">
           <svg class="icono icono--20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>Escríbenos por WhatsApp
         </a>
@@ -1510,8 +1544,14 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
   var cargando = document.getElementById('tally-cargando');
   var placeholder = document.getElementById('tally-placeholder');
   var respaldo = document.getElementById('tally-respaldo');
+  var respaldoTexto = document.getElementById('tally-respaldo-texto');
+  var marco = document.getElementById('tally-marco');
   var chip = document.getElementById('chip-curso');
   var chipTexto = document.getElementById('chip-curso-texto');
+  var cambiar = document.getElementById('cambiar-curso');
+  var selector = document.getElementById('selector-curso');
+  var selectorLista = document.getElementById('selector-lista');
+  var tarjetaForm = document.querySelector('.inscripcion__form');
   var tituloForm = document.getElementById('inscripcion-titulo');
   var cursoActual = null; // null = aún no inicializado
 
@@ -1550,15 +1590,51 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
       chipTexto.textContent = '';
       chip.hidden = true;
     }
+    cambiar.hidden = !curso;
   }
 
+  // Sin curso no se muestra el formulario (ni el enlace "Ábrelo aquí"): se muestra el selector de curso.
+  // Así ninguna inscripción llega con "curso" vacío.
   function setCurso(curso) {
     curso = curso || '';
     if (curso === cursoActual) return; // sin cambios: no se recarga (no se pierden datos ya escritos)
     cursoActual = curso;
     actualizarChip(curso);
+    selector.hidden = !!curso;
+    marco.hidden = !curso;
+    respaldoTexto.hidden = !curso;
+    if (!curso) return;
     respaldo.href = tallyPublicUrl(curso);
     cargarIframe(tallyEmbedUrl(curso));
+  }
+
+  // Opciones del selector, una por cada "Inscribirme" de las tarjetas (mismos nombres que data-curso).
+  function prepararSelector() {
+    var tarjetas = document.querySelectorAll('#cursos a[data-curso]');
+    Array.prototype.forEach.call(tarjetas, function (enlace) {
+      var nombre = enlace.getAttribute('data-curso');
+      var li = document.createElement('li');
+      var btn = document.createElement('button');
+      var texto = document.createElement('span');
+      btn.type = 'button';
+      btn.className = 'selector__opcion';
+      texto.textContent = nombre;
+      btn.appendChild(texto);
+      btn.insertAdjacentHTML('beforeend', '<svg class="icono icono--18" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg>');
+      btn.addEventListener('click', function () {
+        setCurso(nombre);
+        tarjetaForm.scrollIntoView({ behavior: reducirMovimiento ? 'auto' : 'smooth', block: 'start' });
+        cambiar.focus({ preventScroll: true });
+      });
+      li.appendChild(btn);
+      selectorLista.appendChild(li);
+    });
+
+    cambiar.addEventListener('click', function () {
+      setCurso('');
+      var primera = selectorLista.querySelector('button');
+      if (primera) primera.focus();
+    });
   }
 
   function prepararFormulario() {
@@ -1570,24 +1646,20 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
     iframe.addEventListener('load', function () {
       if (iframe.getAttribute('src')) cargando.hidden = true;
     });
+    prepararSelector();
     setCurso('');
     if (!TALLY_PENDIENTE) insertarScriptTally();
 
-    // "Inscribirme" de cada tarjeta: curso preseleccionado.
+    // "Inscribirme" de cada tarjeta: curso preseleccionado. Los botones generales "Inscríbete"
+    // (barra, hero, cierre) llevan a #cursos para elegir primero el curso.
     document.addEventListener('click', function (ev) {
-      var enlace = ev.target.closest ? ev.target.closest('a[href="#inscripcion"]') : null;
+      var enlace = ev.target.closest ? ev.target.closest('a[href="#inscripcion"][data-curso]') : null;
       if (!enlace) return;
-      var curso = enlace.getAttribute('data-curso');
-      if (curso) {
-        ev.preventDefault();
-        setCurso(curso);
-        var destino = document.getElementById('inscripcion');
-        destino.scrollIntoView({ behavior: reducirMovimiento ? 'auto' : 'smooth', block: 'start' });
-        tituloForm.focus({ preventScroll: true });
-      } else {
-        // Botones generales (barra, hero, cierre): curso vacío. El scroll lo hace el ancla nativa.
-        setCurso('');
-      }
+      ev.preventDefault();
+      setCurso(enlace.getAttribute('data-curso'));
+      var destino = document.getElementById('inscripcion');
+      destino.scrollIntoView({ behavior: reducirMovimiento ? 'auto' : 'smooth', block: 'start' });
+      tituloForm.focus({ preventScroll: true });
     });
   }
 
