@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Plantilla Open Graph. Exportar a /assets/og.jpg (1200x630, calidad 85). Abrir en Chrome para que cargue las fuentes. -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap');
+    .serif { font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif; }
+    .sans { font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif; }
+  </style>
+  <rect width="1200" height="630" fill="#0E3A56"/>
+  <circle cx="1010" cy="315" r="300" fill="#0A2C42"/>
+  <circle cx="1010" cy="315" r="300" fill="none" stroke="#1E9AA0" stroke-opacity="0.35" stroke-width="1.5"/>
+  <g transform="translate(905 25) scale(2.4)" fill="none" stroke="#1E9AA0" stroke-opacity="0.75" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 236C56 170 62 104 92 8"/><path d="M57.8 200.2Q80 192.6 89.3 166.7Q63.9 177.6 57.8 200.2M58.8 175.8Q54.2 150.7 27.7 136.6Q35.4 165.6 58.8 175.8M61.4 146.3Q84.8 140.2 97.3 114.5Q70.2 123.8 61.4 146.3M65.3 117.6Q63.5 95.3 41.5 80.6Q45.8 106.6 65.3 117.6M70.5 89.5Q89.7 86.7 101.2 67Q79 72.2 70.5 89.5M76.8 62.2Q77 45.8 61.7 34Q62.9 53.3 76.8 62.2M83.7 35.9Q96 35.2 104 23.1Q89.6 25.1 83.7 35.9M92 8Q99.2 1.8 97.4 -9.2Q89.6 -1.2 92 8"/><path stroke-width="0.6" d="M57.8 200.2L80.5 176M58.8 175.8L36.4 147.6M61.4 146.3L87.2 123.4M65.3 117.6L48.2 90.9M70.5 89.5L92.6 73.3M76.8 62.2L65.9 41.9M83.7 35.9L98.3 26.7M92 8L95.9 -4.4"/>
+  </g>
+  <text x="96" y="150" class="serif" fill="#FFFFFF" font-size="76" font-weight="600" letter-spacing="1">Kléos</text>
+  <text x="100" y="186" class="sans" fill="#7FD1D4" font-size="18" font-weight="600" letter-spacing="14">VITAL</text>
+  <rect x="96" y="232" width="56" height="2" fill="#1E9AA0"/>
+  <text class="serif" fill="#FFFFFF" font-size="72" font-weight="600">
+    <tspan x="96" y="330">Lleva tus conocimientos</tspan>
+    <tspan x="96" y="408">al siguiente nivel</tspan>
+  </text>
+  <text class="sans" fill="#C5D9E3" font-size="26" font-weight="400">
+    <tspan x="96" y="486">Cursos de capacitación en medicina estética y regenerativa.</tspan>
+    <tspan x="96" y="526">Talleres 100% prácticos y presenciales para personal de salud.</tspan>
+  </text>
+</svg>
