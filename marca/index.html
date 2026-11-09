@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de marca · Kléos Vital</title>
+<link rel="icon" href="web/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="web/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;600&display=swap">
+<style>
+:root {
+  --navy: #0E3A56; --navy-900: #0A2C42; --turquesa: #1E9AA0; --turquesa-700: #147278; --turquesa-300: #7FD1D4;
+  --celeste: #EAF4F8; --blanco: #FFFFFF; --texto: #1A2B36; --suave: #4A5F6D; --claro-suave: #C5D9E3; --borde: #D3E3EA;
+  --serif: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--blanco); color: var(--texto); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+img { max-width: 100%; }
+.contenedor { max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; color: var(--navy); margin: 0; line-height: 1.1; text-wrap: balance; }
+h4 { margin: 0; font-size: 15px; font-weight: 600; color: var(--navy); }
+p { margin: 0; }
+a:focus-visible { outline: 3px solid var(--turquesa-700); outline-offset: 2px; }
+
+.cabecera { background: var(--navy); color: var(--blanco); padding-block: 40px 48px; }
+.cabecera .contenedor { display: grid; gap: 20px; }
+.cabecera img.logo { width: 190px; height: auto; }
+.cabecera h1 { color: var(--blanco); font-size: clamp(2.25rem, 7vw, 3.5rem); margin-top: 8px; }
+.cabecera p { color: var(--claro-suave); max-width: 40rem; }
+.btn-zip { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px;
+  background: var(--turquesa-300); color: var(--navy); font-weight: 600; text-decoration: none; }
+.btn-zip:hover { background: #A6E0E2; }
+.btn-zip small { font-weight: 400; opacity: .8; }
+.btn-zip:focus-visible { outline-color: var(--turquesa-300); }
+
+.indice { display: flex; flex-wrap: wrap; gap: 8px; }
+.indice a { color: var(--blanco); font-size: 14px; text-decoration: none; padding: 6px 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; }
+.indice a:hover { background: rgba(255,255,255,.08); }
+
+.seccion { padding-block: 56px; }
+.seccion--celeste { background: var(--celeste); }
+.seccion__cab { display: grid; gap: 8px; margin-bottom: 32px; max-width: 44rem; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--turquesa-700); }
+.seccion h2 { font-size: clamp(2rem, 5vw, 2.75rem); }
+.seccion__cab p { color: var(--suave); }
+
+.grupo + .grupo { margin-top: 40px; }
+.grupo__cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 16px; }
+.grupo__cab h3 { font-size: 28px; }
+.grupo__cab p { color: var(--suave); font-size: 15px; }
+.variantes { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .variantes { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .variantes { grid-template-columns: repeat(4, 1fr); } }
+.variante { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; background: var(--blanco); display: grid; grid-template-rows: auto 1fr; }
+.muestra { display: grid; place-items: center; height: 170px; padding: 24px; }
+.muestra img { max-height: 122px; width: auto; }
+.muestra--horizontal img { width: 85%; height: auto; }
+.variante__pie { display: grid; gap: 12px; padding: 14px 16px 16px; align-content: space-between; }
+.variante__pie p { font-size: 13px; color: var(--suave); }
+.botones { display: flex; gap: 8px; }
+
+.f-blanco { background: var(--blanco); border-bottom: 1px solid var(--borde); }
+.f-navy { background: var(--navy); }
+.f-celeste { background: var(--celeste); }
+.f-turquesa { background: var(--turquesa-700); }
+.f-cuadros { background: repeating-conic-gradient(#EEF3F5 0% 25%, #FFFFFF 0% 50%) 0 0 / 16px 16px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 16px; border-radius: 999px;
+  background: var(--turquesa-700); color: var(--blanco); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.btn:hover { background: #116468; }
+.btn--sec { background: var(--blanco); color: var(--navy); border: 1px solid var(--borde); }
+.btn--sec:hover { background: #D9ECF2; }
+
+.piezas { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .piezas { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .piezas { grid-template-columns: repeat(3, 1fr); } }
+.pieza { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+@media (min-width: 1000px) { .pieza--ancha { grid-column: span 3; } .pieza--ancha .pieza__img img { max-height: 260px; } }
+.pieza__img { display: grid; place-items: center; padding: 16px; height: 300px; }
+.pieza--ancha .pieza__img { height: auto; }
+.pieza__img img { max-height: 268px; width: auto; height: auto; box-shadow: 0 6px 20px rgba(14,58,86,.12); }
+.pieza__pie { display: flex; gap: 12px; align-items: flex-end; justify-content: space-between; padding: 14px 16px 16px; flex-wrap: wrap; }
+.pieza__pie > div { display: grid; gap: 2px; min-width: 0; flex: 1 1 200px; }
+.pieza__pie p { font-size: 13px; color: var(--suave); }
+.medida { font-variant-numeric: tabular-nums; color: var(--turquesa-700) !important; font-weight: 600; }
+
+.iconos-web { display: grid; gap: 12px; }
+@media (min-width: 800px) { .iconos-web { grid-template-columns: 1fr 1fr; } }
+.icono-web { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 14px 16px; border: 1px solid var(--borde); border-radius: 12px; }
+.icono-web__img { width: 72px; height: 72px; display: grid; place-items: center; background: var(--celeste); border-radius: 10px; }
+.icono-web p { font-size: 13px; color: var(--suave); }
+@media (max-width: 480px) { .icono-web { grid-template-columns: auto 1fr; } .icono-web .btn { grid-column: 1 / -1; } }
+
+.guia { display: grid; gap: 24px; }
+@media (min-width: 800px) { .guia { grid-template-columns: 1fr 1fr; } }
+.guia article { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 20px; display: grid; gap: 12px; align-content: start; }
+.guia h3 { font-size: 24px; }
+.guia ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.colores { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+.color { border: 1px solid var(--borde); border-radius: 10px; overflow: hidden; font-size: 13px; }
+.color span { display: block; height: 56px; }
+.color p { padding: 8px 10px; }
+.color b { display: block; color: var(--navy); }
+code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; color: var(--suave); }
+.tipos p { color: var(--suave); font-size: 15px; }
+.tipo-serif { font-family: var(--serif); font-size: 30px; color: var(--navy); line-height: 1.2; }
+.tipo-sans { font-family: var(--sans); font-size: 18px; font-weight: 600; color: var(--navy); letter-spacing: .3em; }
+
+footer { background: var(--navy-900); color: var(--claro-suave); padding-block: 28px; font-size: 14px; }
+footer a { color: var(--turquesa-300); }
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <img class="logo" src="logo/svg/kleos-vital-horizontal-claro.svg" alt="Kléos Vital" width="190" height="79">
+    <h1>Kit de marca</h1>
+    <p>Todos los archivos del logo y las piezas listas para redes. Usa el PNG para redes, WhatsApp y documentos; usa el SVG cuando un diseñador o una imprenta te pida el logo en vector.</p>
+    <a class="btn-zip" href="kleos-vital-marca.zip" download>Descargar todo <small>(.zip · 1.8 MB)</small></a>
+    <nav class="indice" aria-label="Secciones">
+      <a href="#logo">Logo</a><a href="#redes">Redes sociales</a><a href="#web">Web</a><a href="#guia">Guía de uso</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="seccion" id="logo" aria-labelledby="t-logo">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <p class="eyebrow">Logo</p>
+        <h2 id="t-logo">Tres formas, cuatro versiones de color</h2>
+        <p>Los PNG tienen fondo transparente y buena resolución (2400 px el horizontal, 1600 px el vertical, 1024 px el símbolo). Los SVG se pueden ampliar sin perder calidad.</p>
+      </div>
+      
+    <section class="grupo" aria-labelledby="g-horizontal">
+      <div class="grupo__cab"><h3 id="g-horizontal">Horizontal</h3><p>La versión principal. Barra del sitio, firmas, documentos y piezas anchas.</p></div>
+      <div class="variantes">
+        <article class="variante">
+          <div class="muestra f-blanco muestra--horizontal"><img src="logo/svg/kleos-vital-horizontal-color.svg" alt="Logo horizontal, a color" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>A color</h4><p>Fondos blancos o celeste claro</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-horizontal-color.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-horizontal-color.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-navy muestra--horizontal"><img src="logo/svg/kleos-vital-horizontal-claro.svg" alt="Logo horizontal, para fondos oscuros" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Para fondos oscuros</h4><p>Azul marino o fotos oscuras</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-horizontal-claro.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-horizontal-claro.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-celeste muestra--horizontal"><img src="logo/svg/kleos-vital-horizontal-azul.svg" alt="Logo horizontal, una tinta, azul" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, azul</h4><p>Impresión a una tinta, sellos, grabados</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-horizontal-azul.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-horizontal-azul.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-turquesa muestra--horizontal"><img src="logo/svg/kleos-vital-horizontal-blanco.svg" alt="Logo horizontal, una tinta, blanco" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, blanco</h4><p>Sobre fotos o colores de la marca</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-horizontal-blanco.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-horizontal-blanco.svg" download>SVG</a>
+            </div>
+          </div>
+        </article></div>
+    </section>
+    <section class="grupo" aria-labelledby="g-vertical">
+      <div class="grupo__cab"><h3 id="g-vertical">Vertical</h3><p>Para piezas cuadradas o verticales: certificados, portadas, publicaciones.</p></div>
+      <div class="variantes">
+        <article class="variante">
+          <div class="muestra f-blanco muestra--vertical"><img src="logo/svg/kleos-vital-vertical-color.svg" alt="Logo vertical, a color" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>A color</h4><p>Fondos blancos o celeste claro</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-vertical-color.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-vertical-color.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-navy muestra--vertical"><img src="logo/svg/kleos-vital-vertical-claro.svg" alt="Logo vertical, para fondos oscuros" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Para fondos oscuros</h4><p>Azul marino o fotos oscuras</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-vertical-claro.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-vertical-claro.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-celeste muestra--vertical"><img src="logo/svg/kleos-vital-vertical-azul.svg" alt="Logo vertical, una tinta, azul" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, azul</h4><p>Impresión a una tinta, sellos, grabados</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-vertical-azul.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-vertical-azul.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-turquesa muestra--vertical"><img src="logo/svg/kleos-vital-vertical-blanco.svg" alt="Logo vertical, una tinta, blanco" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, blanco</h4><p>Sobre fotos o colores de la marca</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-vertical-blanco.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-vertical-blanco.svg" download>SVG</a>
+            </div>
+          </div>
+        </article></div>
+    </section>
+    <section class="grupo" aria-labelledby="g-simbolo">
+      <div class="grupo__cab"><h3 id="g-simbolo">Símbolo</h3><p>El laurel con KV. Fotos de perfil, sellos y espacios pequeños.</p></div>
+      <div class="variantes">
+        <article class="variante">
+          <div class="muestra f-blanco muestra--simbolo"><img src="logo/svg/kleos-vital-simbolo-color.svg" alt="Logo símbolo, a color" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>A color</h4><p>Fondos blancos o celeste claro</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-simbolo-color.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-simbolo-color.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-navy muestra--simbolo"><img src="logo/svg/kleos-vital-simbolo-claro.svg" alt="Logo símbolo, para fondos oscuros" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Para fondos oscuros</h4><p>Azul marino o fotos oscuras</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-simbolo-claro.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-simbolo-claro.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-celeste muestra--simbolo"><img src="logo/svg/kleos-vital-simbolo-azul.svg" alt="Logo símbolo, una tinta, azul" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, azul</h4><p>Impresión a una tinta, sellos, grabados</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-simbolo-azul.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-simbolo-azul.svg" download>SVG</a>
+            </div>
+          </div>
+        </article>
+        <article class="variante">
+          <div class="muestra f-turquesa muestra--simbolo"><img src="logo/svg/kleos-vital-simbolo-blanco.svg" alt="Logo símbolo, una tinta, blanco" loading="lazy"></div>
+          <div class="variante__pie">
+            <div><h4>Una tinta, blanco</h4><p>Sobre fotos o colores de la marca</p></div>
+            <div class="botones">
+              <a class="btn" href="logo/png/kleos-vital-simbolo-blanco.png" download>PNG</a>
+              <a class="btn btn--sec" href="logo/svg/kleos-vital-simbolo-blanco.svg" download>SVG</a>
+            </div>
+          </div>
+        </article></div>
+    </section>
+    </div>
+  </section>
+
+  <section class="seccion seccion--celeste" id="redes" aria-labelledby="t-redes">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <p class="eyebrow">Redes sociales</p>
+        <h2 id="t-redes">Piezas listas para subir</h2>
+        <p>Cada imagen ya tiene la medida que pide la red. En las portadas, el contenido está centrado para que el celular no lo recorte.</p>
+      </div>
+      <div class="piezas">
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/perfil-azul-1080.png" alt="Foto de perfil, fondo azul" width="1080" height="1080" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Foto de perfil, fondo azul</h4><p class="medida">1080 × 1080 px · 46 KB</p><p>Foto de perfil: Instagram, WhatsApp, Facebook, LinkedIn, TikTok</p></div>
+          <a class="btn" href="redes/perfil-azul-1080.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/perfil-blanco-1080.png" alt="Foto de perfil, fondo blanco" width="1080" height="1080" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Foto de perfil, fondo blanco</h4><p class="medida">1080 × 1080 px · 44 KB</p><p>Foto de perfil: Instagram, WhatsApp, Facebook, LinkedIn, TikTok</p></div>
+          <a class="btn" href="redes/perfil-blanco-1080.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/perfil-celeste-1080.png" alt="Foto de perfil, fondo celeste" width="1080" height="1080" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Foto de perfil, fondo celeste</h4><p class="medida">1080 × 1080 px · 45 KB</p><p>Foto de perfil: Instagram, WhatsApp, Facebook, LinkedIn, TikTok</p></div>
+          <a class="btn" href="redes/perfil-celeste-1080.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/instagram-publicacion-1080x1350.png" alt="Publicación de Instagram" width="1080" height="1350" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Publicación de Instagram</h4><p class="medida">1080 × 1350 px · 93 KB</p><p>Publicación de presentación en el feed de Instagram (4:5)</p></div>
+          <a class="btn" href="redes/instagram-publicacion-1080x1350.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/instagram-historia-1080x1920.png" alt="Historia de Instagram" width="1080" height="1920" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Historia de Instagram</h4><p class="medida">1080 × 1920 px · 109 KB</p><p>Historia de Instagram o estado de WhatsApp</p></div>
+          <a class="btn" href="redes/instagram-historia-1080x1920.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza ">
+        <div class="pieza__img f-cuadros"><img src="redes/instagram-destacada-1080x1920.png" alt="Portada de destacadas" width="1080" height="1920" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Portada de destacadas</h4><p class="medida">1080 × 1920 px · 44 KB</p><p>Portada de historias destacadas de Instagram</p></div>
+          <a class="btn" href="redes/instagram-destacada-1080x1920.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza pieza--ancha">
+        <div class="pieza__img f-cuadros"><img src="redes/facebook-portada-1640x624.png" alt="Portada de Facebook" width="1640" height="624" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Portada de Facebook</h4><p class="medida">1640 × 624 px · 62 KB</p><p>Foto de portada de Facebook (contenido centrado para que no se recorte en celular)</p></div>
+          <a class="btn" href="redes/facebook-portada-1640x624.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza pieza--ancha">
+        <div class="pieza__img f-cuadros"><img src="redes/linkedin-portada-1584x396.png" alt="Portada de LinkedIn" width="1584" height="396" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Portada de LinkedIn</h4><p class="medida">1584 × 396 px · 42 KB</p><p>Portada de LinkedIn (deja libre la esquina de la foto de perfil)</p></div>
+          <a class="btn" href="redes/linkedin-portada-1584x396.png" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza pieza--ancha">
+        <div class="pieza__img f-cuadros"><img src="redes/vista-previa-enlace-1200x630.jpg" alt="Vista previa del enlace" width="1200" height="630" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Vista previa del enlace</h4><p class="medida">1200 × 630 px · 67 KB</p><p>Vista previa al compartir el enlace de la página (WhatsApp, Facebook, LinkedIn)</p></div>
+          <a class="btn" href="redes/vista-previa-enlace-1200x630.jpg" download>Descargar</a>
+        </div>
+      </article>
+      <article class="pieza pieza--ancha">
+        <div class="pieza__img f-cuadros"><img src="redes/firma-correo-600.png" alt="Logo para firma de correo" width="600" height="248" loading="lazy"></div>
+        <div class="pieza__pie">
+          <div><h4>Logo para firma de correo</h4><p class="medida">600 × 248 px · 27 KB</p><p>Firma de correo y documentos (fondo transparente)</p></div>
+          <a class="btn" href="redes/firma-correo-600.png" download>Descargar</a>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="web" aria-labelledby="t-web">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <p class="eyebrow">Web</p>
+        <h2 id="t-web">Íconos para la página</h2>
+        <p>Versión simplificada del símbolo, con hojas más grandes, para que se lea en la pestaña del navegador.</p>
+      </div>
+      <div class="iconos-web">
+      <article class="icono-web">
+        <div class="icono-web__img"><img src="web/favicon.svg" alt="" width="56" height="56"></div>
+        <div><h4>Favicon (SVG)</h4><p>Ícono de la pestaña del navegador. Ya está en la página.</p></div>
+        <a class="btn btn--sec" href="web/favicon.svg" download>Descargar</a>
+      </article>
+      <article class="icono-web">
+        <div class="icono-web__img"><img src="web/favicon.ico" alt="" width="56" height="56"></div>
+        <div><h4>Favicon (ICO)</h4><p>Respaldo para navegadores antiguos: 16, 32 y 48 px.</p></div>
+        <a class="btn btn--sec" href="web/favicon.ico" download>Descargar</a>
+      </article>
+      <article class="icono-web">
+        <div class="icono-web__img"><img src="web/apple-touch-icon.png" alt="" width="56" height="56"></div>
+        <div><h4>Ícono para iPhone</h4><p>180 × 180 px. Cuando alguien guarda la página en su pantalla de inicio.</p></div>
+        <a class="btn btn--sec" href="web/apple-touch-icon.png" download>Descargar</a>
+      </article>
+      <article class="icono-web">
+        <div class="icono-web__img"><img src="web/icono-app-512.png" alt="" width="56" height="56"></div>
+        <div><h4>Ícono de app</h4><p>512 × 512 px. Directorios, Google Business, apps de terceros.</p></div>
+        <a class="btn btn--sec" href="web/icono-app-512.png" download>Descargar</a>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--celeste" id="guia" aria-labelledby="t-guia">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <p class="eyebrow">Guía de uso</p>
+        <h2 id="t-guia">Para que el logo siempre se vea bien</h2>
+      </div>
+      <div class="guia">
+        <article>
+          <h3>Colores</h3>
+          <div class="colores">
+            <div class="color"><span style="background:#0E3A56"></span><p><b>Azul marino</b><code>#0E3A56</code></p></div>
+            <div class="color"><span style="background:#1E9AA0"></span><p><b>Turquesa</b><code>#1E9AA0</code></p></div>
+            <div class="color"><span style="background:#147278"></span><p><b>Turquesa oscuro</b><code>#147278</code></p></div>
+            <div class="color"><span style="background:#7FD1D4"></span><p><b>Turquesa claro</b><code>#7FD1D4</code></p></div>
+            <div class="color"><span style="background:#EAF4F8"></span><p><b>Celeste</b><code>#EAF4F8</code></p></div>
+            <div class="color"><span style="background:#FFFFFF"></span><p><b>Blanco</b><code>#FFFFFF</code></p></div>
+          </div>
+        </article>
+        <article class="tipos">
+          <h3>Tipografías</h3>
+          <p class="tipo-serif">Cormorant Garamond</p>
+          <p>Títulos y el nombre “Kléos”. Seminegrita (600) y cursiva (500).</p>
+          <p class="tipo-sans">INTER</p>
+          <p>Textos y la palabra “VITAL”. Regular (400) y seminegrita (600). Ambas son gratuitas en Google Fonts.</p>
+        </article>
+        <article>
+          <h3>Sí</h3>
+          <ul>
+            <li>Deja alrededor del logo un espacio libre igual a la altura de las letras KV.</li>
+            <li>Sobre fondos oscuros, usa la versión “para fondos oscuros”.</li>
+            <li>Por debajo de 120 px de ancho, usa el símbolo en vez del logo horizontal.</li>
+            <li>Por debajo de 32 px, usa el favicon (versión simplificada).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>No</h3>
+          <ul>
+            <li>No estires ni deformes el logo: escálalo siempre proporcional.</li>
+            <li>No cambies los colores fuera de las cuatro versiones.</li>
+            <li>No le agregues sombras, contornos ni efectos.</li>
+            <li>No lo pongas sobre fotos con mucho detalle sin un fondo que lo separe.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">Kléos Vital · Educación que transforma tu práctica clínica · <a href="../">Ir a la página</a></div>
+</footer>
+</body>
+</html>

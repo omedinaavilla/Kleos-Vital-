@@ -8,7 +8,9 @@
 <link rel="canonical" href="https://omedinaavilla.github.io/Kleos-Vital-/">
 <meta name="theme-color" content="#EAF4F8">
 <meta name="color-scheme" content="light">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <!-- Open Graph / redes sociales (og:image y og:url van con URL absoluta) -->
 <meta property="og:type" content="website">
@@ -401,10 +403,17 @@ h1, h2, h3, .frase, .paso__num, .curso__num, .cita, .docente__avatar { font-vari
 .barra__enlace:focus-visible { outline-offset: 2px; }
 @media (min-width: 768px) { .barra__enlace { font-size: var(--fs-link); } }
 
-/* Logo (§6.15) */
+/* Logo (§6.15): símbolo de laurel (SVG) + texto en HTML con las fuentes de la página */
 .logo {
-  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; gap: 8px;
   line-height: 1; min-height: 44px; text-decoration: none;
+}
+.logo__simbolo { display: block; width: 38px; height: 38px; flex: none; }
+.logo__texto { display: inline-flex; flex-direction: column; align-items: center; }
+@media (max-width: 359px) {
+  .barra .logo { gap: 6px; }
+  .barra .logo__simbolo { width: 30px; height: 30px; }
+  .barra__enlace { padding: 0 8px; }
 }
 .logo:focus-visible { outline-offset: 2px; border-radius: var(--radius-xs); }
 .logo__kleos {
@@ -875,6 +884,8 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
    ========================================================= */
 .pie { background: var(--c-navy-900); padding: 56px 0 32px; }
 @media (min-width: 1024px) { .pie { padding: 72px 0 40px; } }
+.pie .logo { gap: 12px; }
+.pie .logo__simbolo { width: 56px; height: 56px; }
 .pie .logo__kleos { font-size: 34px; color: var(--c-blanco); }
 .pie .logo__vital { font-size: 11px; color: var(--c-turquesa-300); margin-top: 5px; }
 .pie__lema {
@@ -1000,10 +1011,13 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
 <!-- ============ 1. BARRA SUPERIOR ============ -->
 <header class="barra" id="barra">
   <div class="contenedor">
-    <!-- [COMPLETAR] Logo definitivo: por ahora es tipográfico en HTML+CSS (respaldo en assets/logo-kleos-vital.svg) -->
+    <!-- Logo: símbolo de laurel + texto. Versión completa en SVG: assets/logo-kleos-vital.svg -->
     <a class="logo" href="#inicio" aria-label="Kléos Vital, ir al inicio">
-      <span class="logo__kleos">Kléos</span>
-      <span class="logo__vital">VITAL</span>
+      <img class="logo__simbolo" src="assets/logo-simbolo.svg" width="38" height="38" alt="">
+      <span class="logo__texto">
+        <span class="logo__kleos">Kléos</span>
+        <span class="logo__vital">VITAL</span>
+      </span>
     </a>
     <nav class="barra__enlaces" aria-label="Accesos rápidos">
       <a class="barra__enlace" href="#cursos">Inscríbete</a>
@@ -1319,7 +1333,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
                El JS asigna el src con alignLeft, hideTitle, transparentBackground, dynamicHeight, curso y src
                (data-url guarda la misma URL como referencia para pruebas). -->
           <iframe class="formulario__iframe" id="tally-iframe"
-                  data-url="https://tally.so/embed/XXXXXX?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1&amp;curso=&amp;src=directo"
+                  data-url="https://tally.so/embed/RWxzGJ?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1&amp;curso=&amp;src=directo"
                   loading="lazy" width="100%" height="560"
                   title="Formulario de inscripción a los cursos de Kléos Vital"></iframe>
           <p class="formulario__cargando" id="tally-cargando">Cargando formulario…</p>
@@ -1435,8 +1449,11 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
     <div class="pie__superior">
       <div class="pie__marca">
         <a class="logo" href="#inicio" aria-label="Kléos Vital, ir al inicio">
-          <span class="logo__kleos">Kléos</span>
-          <span class="logo__vital">VITAL</span>
+          <img class="logo__simbolo" src="assets/logo-simbolo-claro.svg" width="56" height="56" alt="">
+          <span class="logo__texto">
+            <span class="logo__kleos">Kléos</span>
+            <span class="logo__vital">VITAL</span>
+          </span>
         </a>
         <p class="pie__lema">Educación que transforma tu práctica clínica</p>
       </div>
