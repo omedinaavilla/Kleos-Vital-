@@ -593,6 +593,16 @@ h1, h2, h3, .frase, .paso__num, .curso__num, .cita, .docente__avatar { font-vari
 }
 .curso__titulo { margin-top: 20px; }
 .curso__desc { margin-top: 8px; font-size: 1rem; line-height: 1.6; color: var(--c-texto-suave); }
+.curso__precio { margin-top: 16px; display: grid; gap: 2px; }
+.curso__precio-etiqueta {
+  font-size: 0.75rem; font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--c-turquesa-700);
+}
+.curso__precio-valor {
+  font-family: var(--font-serif); font-weight: var(--fw-semibold); font-size: 2rem; line-height: 1.15;
+  color: var(--c-titulo); font-variant-numeric: lining-nums tabular-nums;
+}
+.curso__precio-nota { margin-top: 4px; font-size: var(--fs-small); line-height: 1.5; color: var(--c-texto-suave); }
 .curso__meta {
   margin-top: 16px; display: flex; gap: 8px; align-items: flex-start;
   font-size: var(--fs-small); line-height: 1.5; color: var(--c-texto-suave);
@@ -1104,8 +1114,9 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
   </section>
 
   <!-- ============ 5. CURSOS ============ -->
-  <!-- [COMPLETAR] Fechas, horarios y precios por curso. Mientras no existan se muestra
-       "Próximas fechas: consúltalas por WhatsApp" y NO se muestra precio. -->
+  <!-- Precios: 01, 02, 04 y 05 se venden en paquete ($2.800.000) y también por separado (precio individual por WhatsApp);
+       06 $750.000; 07 $1.400.000; 03 sin precio todavía. [COMPLETAR] Fechas y horarios: mientras no existan se muestra
+       "Próximas fechas: consúltalas por WhatsApp". -->
   <section class="seccion seccion--blanca" id="cursos" aria-labelledby="cursos-titulo">
     <div class="contenedor">
       <div class="encabezado encabezado--centrado revelar">
@@ -1122,6 +1133,11 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </div>
           <h3 class="titulo-3 curso__titulo" id="curso-01">Toxina botulínica</h3>
           <p class="curso__desc">Manejo, dosis, anatomía y seguridad.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">En paquete de 4 cursos</span>
+            <span class="curso__precio-valor">$2.800.000</span>
+            <span class="curso__precio-nota">Con ácido hialurónico, plasma e hilos. Traes tu modelo; incluye insumos y 20 U de toxina. Precio individual: consúltalo por WhatsApp.</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
             <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Toxina botulínica" aria-describedby="curso-01">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
@@ -1136,6 +1152,11 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </div>
           <h3 class="titulo-3 curso__titulo" id="curso-02">Ácido hialurónico</h3>
           <p class="curso__desc">Técnicas, zonas, indicaciones y complicaciones.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">En paquete de 4 cursos</span>
+            <span class="curso__precio-valor">$2.800.000</span>
+            <span class="curso__precio-nota">Con toxina botulínica, plasma e hilos. Traes tu modelo; incluye insumos y 20 U de toxina. Precio individual: consúltalo por WhatsApp.</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
             <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Ácido hialurónico" aria-describedby="curso-02">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
@@ -1164,6 +1185,11 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </div>
           <h3 class="titulo-3 curso__titulo" id="curso-04">Plasma rico en plaquetas (PRP)</h3>
           <p class="curso__desc">Obtención, aplicación y usos clínicos.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">En paquete de 4 cursos</span>
+            <span class="curso__precio-valor">$2.800.000</span>
+            <span class="curso__precio-nota">Con toxina botulínica, ácido hialurónico e hilos. Traes tu modelo; incluye insumos y 20 U de toxina. Precio individual: consúltalo por WhatsApp.</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
             <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Plasma rico en plaquetas (PRP)" aria-describedby="curso-04">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
@@ -1178,6 +1204,11 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </div>
           <h3 class="titulo-3 curso__titulo" id="curso-05">Hilos de tensión y de colágeno</h3>
           <p class="curso__desc">Técnicas, tipos de hilos y zonas de aplicación.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">En paquete de 4 cursos</span>
+            <span class="curso__precio-valor">$2.800.000</span>
+            <span class="curso__precio-nota">Con toxina botulínica, ácido hialurónico y plasma. Traes tu modelo; incluye insumos y 20 U de toxina. Precio individual: consúltalo por WhatsApp.</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
             <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Hilos de tensión y de colágeno" aria-describedby="curso-05">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
@@ -1190,12 +1221,16 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
             <span class="curso__num">06</span>
             <span class="curso__circulo"><svg class="icono icono--26" aria-hidden="true" focusable="false"><use href="#i-curso-sueroterapia"/></svg></span>
           </div>
-          <h3 class="titulo-3 curso__titulo" id="curso-06">Sueroterapia básica y avanzada</h3>
+          <h3 class="titulo-3 curso__titulo" id="curso-06">Sueroterapia avanzada</h3>
           <p class="curso__desc">Protocolos, mezclas, indicaciones y seguimiento.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">Valor del curso</span>
+            <span class="curso__precio-valor">$750.000</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
-            <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Sueroterapia básica y avanzada" aria-describedby="curso-06">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-            <li><a class="curso__enlace curso__enlace--wa" href="https://wa.me/573334339032?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20Kl%C3%A9os%20Vital" data-wa-curso="Sueroterapia básica y avanzada" target="_blank" rel="noopener" aria-describedby="curso-06">Preguntar por WhatsApp<svg class="icono icono--18" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a></li>
+            <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Sueroterapia avanzada" aria-describedby="curso-06">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
+            <li><a class="curso__enlace curso__enlace--wa" href="https://wa.me/573334339032?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20Kl%C3%A9os%20Vital" data-wa-curso="Sueroterapia avanzada" target="_blank" rel="noopener" aria-describedby="curso-06">Preguntar por WhatsApp<svg class="icono icono--18" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a></li>
           </ul>
         </li>
 
@@ -1206,6 +1241,10 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </div>
           <h3 class="titulo-3 curso__titulo" id="curso-07">Terapia neural</h3>
           <p class="curso__desc">Aplicaciones clínicas, puntos de inyección y abordaje integral.</p>
+          <p class="curso__precio">
+            <span class="curso__precio-etiqueta">Valor del curso</span>
+            <span class="curso__precio-valor">$1.400.000</span>
+          </p>
           <p class="curso__meta"><svg class="icono icono--16" aria-hidden="true" focusable="false"><use href="#i-calendario"/></svg><span>Próximas fechas: consúltalas por WhatsApp</span></p>
           <ul class="curso__enlaces" role="list">
             <li><a class="curso__enlace curso__enlace--inscribir" href="#inscripcion" data-curso="Terapia neural" aria-describedby="curso-07">Inscribirme<svg class="icono icono--18 icono--flecha" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
