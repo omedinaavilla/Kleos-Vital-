@@ -655,6 +655,7 @@ h1, h2, h3, .frase, .paso__num, .curso__num, .cita, .docente__avatar { font-vari
   object-fit: cover; /* para cuando sea <img> */
 }
 @media (min-width: 1024px) { .docente__avatar { width: 128px; height: 128px; font-size: 48px; } }
+img.docente__avatar { display: block; }
 .docente__nombre { margin-top: 28px; }
 .docente__rol { margin-top: 6px; font-weight: var(--fw-semibold); font-size: var(--fs-link); line-height: 1.4; color: var(--c-turquesa-700); }
 .docente__rol2 { margin-top: 2px; font-size: var(--fs-link); line-height: 1.4; color: var(--c-texto-suave); }
@@ -1237,8 +1238,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
       </div>
       <ul class="docentes" role="list">
         <li class="docente revelar" style="--retraso:0ms">
-          <!-- [COMPLETAR] Reemplazar por <img class="docente__avatar" src="img/neira.jpg" alt="Dr. Andrés Neira" width="128" height="128" loading="lazy"> -->
-          <div class="docente__avatar" aria-hidden="true">AN</div>
+          <img class="docente__avatar" src="img/neira.jpg" alt="Foto del Dr. Andrés Neira" width="128" height="128" loading="lazy" decoding="async">
           <h3 class="titulo-3 docente__nombre">Dr. Andrés Neira</h3>
           <p class="docente__rol">Médico Estético</p>
           <ul class="docente__lista" role="list">
@@ -1247,8 +1247,7 @@ html:not(.js) .formulario__iframe, html:not(.js) .formulario__cargando { display
           </ul>
         </li>
         <li class="docente revelar" style="--retraso:120ms">
-          <!-- [COMPLETAR] Reemplazar por <img class="docente__avatar" src="img/villarreal.jpg" alt="Dra. Erlinda Villarreal" width="128" height="128" loading="lazy"> -->
-          <div class="docente__avatar" aria-hidden="true">EV</div>
+          <img class="docente__avatar" src="img/villarreal.jpg" alt="Foto de la Dra. Erlinda Villarreal" width="128" height="128" loading="lazy" decoding="async">
           <h3 class="titulo-3 docente__nombre">Dra. Erlinda Villarreal</h3>
           <p class="docente__rol">Médica Funcional y Regenerativa</p>
           <p class="docente__rol2">Magíster en Calidad de los Servicios de Salud</p>
